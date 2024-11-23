@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilustraciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Regresar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="carousel-container">
+        <button class="carousel-button left">&lt;</button>
+        <div class="carousel">
+        <img src="CoupleMeu.png" alt="Ilustración 1">
+        <img src="Madeline.png" alt="Ilustración 2">
+        <img src="Miku.png" alt="Ilustración 3">
+        <img src="Meu.png" alt="Ilustración 4">
+        <img src="Bunny.png" alt="Ilustración 5">
+        <img src="Clown.png" alt="Ilustración 6">
+    </div>
+    <button class="carousel-button right">&gt;</button>
+</div>
+<script>
+    const carousel = document.querySelector('.carousel');
+    const leftButton = document.querySelector('.carousel-button.left');
+    const rightButton = document.querySelector('.carousel-button.right');
+    
+    let scrollAmount = 0;
+    const scrollStep = 1000;
+
+    rightButton.addEventListener('click', () => {
+        scrollAmount += scrollStep;
+        carousel.style.transform = `translateX(-${scrollAmount}px)`;
+    });
+
+    leftButton.addEventListener('click', () => {
+        scrollAmount -= scrollStep;
+        if (scrollAmount < 0) scrollAmount = 0;
+        carousel.style.transform = `translateX(-${scrollAmount}px)`;
+    });
+</script>
+
+
+</body>
+</html>
